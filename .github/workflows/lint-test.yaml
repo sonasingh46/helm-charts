@@ -1,6 +1,14 @@
 name: Lint and Test Charts
 
-on: [push, pull_request]
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the master branch
+  push:
+    paths:
+    - 'charts/**'
+  pull_request:
+    paths:
+    - 'charts/**'
 
 jobs:
   lint-test:
